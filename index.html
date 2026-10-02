@@ -295,6 +295,9 @@ body.loaded .hero-intro{opacity:1;transform:none;transition:opacity 1s ease .1s,
 /* ---------- brand (letter explosion) ---------- */
 .brand{background:var(--coal);color:var(--silver);position:relative;height:260svh}
 .brand-pin{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 1.6rem;overflow:hidden}
+.brand-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;filter:brightness(.62)}
+.brand-pin::after{content:"";position:absolute;inset:0;background:rgba(4,4,7,.34);z-index:1;pointer-events:none}
+.brand-pin .explode,.brand-pin .brand-cap{position:relative;z-index:2}
 .explode{
   font-stretch:125%;font-weight:650;text-transform:uppercase;line-height:.95;letter-spacing:-.015em;
   font-size:clamp(3.4rem,12vw,12rem);perspective:900px;will-change:transform;
@@ -593,6 +596,9 @@ footer{position:relative;z-index:1;background:var(--blue);color:var(--silver);ov
   <!-- BRAND -->
   <section class="brand" data-theme="dark" id="brand">
     <div class="brand-pin">
+      <video class="brand-video" autoplay muted loop playsinline disablepictureinpicture aria-hidden="true">
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260808_064556_051587f1-74a1-4336-8c05-4dde3594ed05.mp4" type="video/mp4">
+      </video>
       <h2 class="explode" id="explode">Dream<br>Films</h2>
       <p class="brand-cap" id="brandCap">The studio behind the stories — wedding films &amp; candid documentation.</p>
     </div>
